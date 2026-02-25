@@ -122,7 +122,12 @@ setText("totalGross", totalGross.toFixed(2));
 
 function openPrintWindow(htmlString, title = "Rechnung") {
 
-  const w = window.open("", "_blank");
+  const w = window.open("about:blank", "_blank");
+
+  if (!w) {
+    alert("Popup bloccato dal browser. Permetti i Popup per stampare il PDF.")
+    return;
+  }
 
   w.document.open();
 

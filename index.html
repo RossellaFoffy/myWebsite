@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <!-- Meta informazioni -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Descrizione del mio sito">
+    <link rel="icon" href="./assets/logo/favicon.ico" media="(prefers-color-scheme: light)" />
+    <link rel="icon" href="./assets/logo/favicon.ico" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" href="./assets/logo/favicon.ico" type="image/x-icon">
+    <title>Sweet Foffy</title>
+
+    <!-- Import style CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        
+        <div>
+            <nav class="navbar"> 
+                <img src="./assets/logo/Logo SVG.svg" class="logo-header">
+        
+                <ul>
+                    <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+                    <li><a href="prodotti.html" data-i18n="nav_prodotti">Prodotti</a></li>
+                    <li><a href="contattami.html" data-i18n="nav_contattami">Contattami</a></li>
+                </ul>
+
+                <select id="language-switcher" class="lang-switcher">
+                    <option value="it">IT</option>
+                    <option value="en">EN</option>
+                    <option value="de">DE</option>
+                </select>
+
+            </nav>
+        </div>
+    </header>
+
+    <!-- CONTENT -->
+
+    <main>
+        <header class="hero">
+            <div class="slides">
+                <img src="./assets/products/crostata_nutella_1.jpg" class="active">
+                <img src="./assets/products/Bocconotto_Crema_1.JPG">
+                <img src="./assets/products/crostata_pistacchio_4.jpg">
+                <img src="./assets/products/crostata_nutella_2.jpg">
+                <img src="./assets/products/Bocconotto_Crema_4.jpg">
+                <img src="./assets/products/Crostata_marmellata_1.PNG">
+            </div>
+        </header>
+
+        <section class="section reveal">
+            <h1 data-i18n="index_title_letter">LA STORIA E LA TRADIZIONE</h1>
+            <br/>
+            <p data-i18n="index_letter_1">
+                Rossella Ferrara, una donna, una mamma, una gerente gastronomica, con molta esperienza in cucina, ha gestito l’intera cucina del suo ristorante in passato, creando menù interessanti e sfiziosi con ogni tipo di ingrediente, seguendo la sua passione per la cucina tradizionale italiana.
+            </p>
+            <br/>
+            <p data-i18n="index_letter_2">
+                Ed è proprio di questo che stiamo parlando: tradizione.
+            </p>
+            <br/>
+            <p data-i18n="index_letter_3">
+                Sweet Foffy è un progetto di Rossella che ha un concept ben preciso: punta alla commercializzazione in Svizzera di dolci tradizionali italiani a pasta frolla tramite vendita all’ingrosso e al dettaglio. Crostate e bocconotti freschi e fragranti, fatti a mano con metodi tradizionali, ingredienti freschissimi ed esperienza personale notevole, tramandata anche dalle passate generazioni, esattamente “come li faceva la nonna”.
+            </p>
+            <br/>
+            <p data-i18n="index_letter_4">
+                Se il vostro locale gastronomico ha bisogno di un tocco di tradizione, sapori che facciano sentire i propri clienti “a casa propria”, frolle fragranti e gustose con farciture generose e intense, non potete non avere i suoi dolci in vendita!
+            </p>
+             <br/>
+            <p data-i18n="index_letter_5">
+                D’altra parte, Rossella è anche aperta a prenotazioni private, al dettaglio: se volete assaporare anche all’estero la fragranza e la freschezza delle torte che preparava la nonna in Italia, facendovi tornare indietro nel tempo o facendovi scoprire questi sapori, nel caso non li aveste mai provati prima.
+            </p>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p><a href="https://www.angelopiccoli.me">&copy; 2026 - Angelo Piccoli</a></p>
+    </footer>
+
+    <!-- Collegamento al file JavaScript -->
+    <script src="js/i18n/i18n-core.js"></script>
+    <script src="js/components/hero.js"></script>
+    <script src="js/components/personal-info.js"></script>
+    <script src="js/i18n/translations-index.js"></script>
+    <scriptc src="js/pages/index.js"></scriptc>
+    <script src="js/i18n/i18n-switcher.js"></script>
+
+</body>
+</html>

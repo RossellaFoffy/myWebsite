@@ -1,0 +1,153 @@
+:root { 
+    --b:#EFD7C6; 
+    --muted:#666; 
+}
+
+body { 
+    font-family: system-ui, Helvetica, sans-serif; 
+    max-width: 100%; 
+}
+
+.topbar { 
+    margin: 20px; 
+}
+
+.header { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: flex-start; 
+    gap: 24px; 
+}
+
+.brand { 
+    display: flex; 
+    align-items: center; 
+    gap: 12px; 
+}
+
+
+.muted { 
+    color: var(--muted); 
+}
+
+.card { 
+    background: #EFD7C6;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    width: 60%;
+    margin: 20px;
+    padding: 20px;
+}
+
+label { 
+    display: block; 
+    font-weight: 650; 
+    margin: 10px 0;
+}
+
+input, textarea { 
+    width: 90%;
+    padding: 10px;
+    font-size: 16px; 
+    border:1px solid var(--b); 
+    border-radius: 8px;
+    text-align: left;
+
+}
+
+.grid2 { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 14px;
+}
+
+.row-between { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    gap: 12px; 
+}
+
+.table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    margin-top: 10px;
+}
+
+.table th, .table td { 
+    border:1px solid #000000;
+    padding: 10px;
+    background: #ffffff;
+}
+
+.table th { 
+    text-align:left; 
+}
+
+th.num, td.num { text-align: right; }
+
+td select.product {
+    appearance: none;       /* rimuove lo stile di default */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #ffffff;
+    border: 1px solid var(--b);
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    outline: none;
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* Focus */
+select.product:focus {
+  box-shadow: 0 0 0 2px rgba(0,0,0,0.05);
+}
+
+/* Freccia custom */
+select.product {
+  background-image: url("data:image/svg+xml;charset=US-ASCII,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'><polygon points='0,0 10,0 5,6' fill='rgb(0,0,0)'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 10px;
+}
+
+td input.desc { width: 80%;}
+
+.num { 
+    text-align:right; 
+}
+
+button { 
+    font-size: large;
+    padding: 10px 14px; 
+    border:1px solid #000000; 
+    border-radius: 8px; 
+    cursor:pointer; 
+    background:white; 
+    font-weight: 600;
+}
+
+button.primary { 
+    background:#111; color:white; border-color:#111; 
+}
+
+button:disabled { 
+    opacity:0.6; cursor:not-allowed; 
+}
+
+.totbar { 
+    display:flex; justify-content:space-between; align-items:baseline; margin-top: 12px; 
+}
+
+.total { 
+    font-size: 18px; font-weight: 800; 
+}
+
+.actions { 
+    display:flex; align-items:center; gap: 12px; margin-top: 14px; 
+}
+

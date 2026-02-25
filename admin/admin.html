@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sweet Foffy — Inserimento fattura</title>
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+
+  <header class="topbar">
+    <h1>Sweet Foffy — Inserimento fattura</h1>
+    <p class="muted">Compila, salva su Google Sheets e genera PDF.</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Kunde Daten</h2>
+
+      <div class="grid2">
+        <div>
+          <label for="clienteNome">Vorname und Name *</label>
+          <input id="clienteNome" autocomplete="name" />
+        </div>
+        <div>
+          <label for="clienteEmail">Email</label>
+          <input id="clienteEmail" type="email" autocomplete="email" />
+        </div>
+      </div>
+
+      <label for="clienteIndirizzo">Adresse</label>
+      <textarea id="clienteIndirizzo" rows="2" autocomplete="street-address"></textarea>
+
+      <label for="note">Bemerkungen</label>
+      <textarea id="note" rows="2"></textarea>
+    </section>
+
+    <section class="card">
+      <div class="row-between">
+        <h2>Rechnung</h2>
+        <button type="button" id="addRow">+ Reie hinzufügen</button>
+      </div>
+
+      <table class="table" id="righe">
+        <thead>
+          <tr>
+            <th class="num">Nr.</th>
+            <th>Artikel</th>
+            <th class="num">Menge</th>
+            <th class="num">Einzel Preis (CHF)</th>
+            <th class="num">MwST Satz</th>
+            <th class="num">Total exkl. MwST</th>
+            <th class="num">Total inkl. MwST</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <div class="totbar">
+        <div class="muted">Total</div>
+        <div id="totaleView" class="total">CHF 0.00</div>
+      </div>
+
+      <div class="actions">
+        <button type="button" id="saveBtn" class="primary">Speichern + PDF Erstellung</button>
+        <span id="status" class="muted"></span>
+      </div>
+    </section>
+  </main>
+
+  <!-- TEMPLATE FATTURA (non visibile) -->
+  <template id="invoiceTemplate">
+    <!doctype html>
+    <html lang="it">
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width,initial-scale=1" />
+      <title>Rechnung</title>
+      <style>
+        body { font-family: Helvetica, sans-serif; color:#111; }
+        .top { display:flex; justify-content:space-between; align-items: flex-end; gap:24px; }
+        h1 { margin:0 0 6px 0; font-size: 20px; }
+        .logo_rechnung { height: 90px; width: auto;}
+        h2 { font-size: 18px; }
+        .muted { color:#666; }
+        hr { margin: 16px 0; border:0; border-top:1px solid #ddd; }
+        table { width:100%; border-collapse:collapse; margin-top: 14px; }
+        th, td { border: 1px solid #000; padding: 8px; }
+        th { background:#EFD7C6; text-align:left; }
+        .num { text-align:right; }
+        .totals { margin-top: 10px; }
+        .tot { text-align:right; font-size: 18px; }
+        .btn { margin-top: 16px; padding: 10px 14px; font-size: 14px; cursor:pointer; }
+        @media print { .btn { display:none; } }
+      </style>
+    </head>
+
+    <body>
+      <div class="top">
+        <div>
+          <h1>Rechnung</h1>
+          <div><b>Nummer:</b> <span data-bind="invoiceNumber"></span></div>
+          <div><b>Datum:</b> <span data-bind="invoiceDate"></span></div>
+          <div>Zahlbar in 15 Tagen netto</div>
+        </div>
+
+        <div>
+          <div>
+            <img class="logo_rechnung" data-bind="companyLogo" alt="Logo azienda" />
+            <div class="brandText">
+              <h2 class="companyName" data-bind="companyName"></h2>
+              <div data-bind="companyLine1"></div>
+              <div data-bind="companyLine2"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+
+      <div>
+        <div><b>Kunde:</b></div>
+        <div data-bind="customerName"></div>
+        <div data-bind="customerAddress"></div>
+        <div data-bind="customerEmail"></div>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th class="num">Nr.</th>
+            <th>Artikel</th>
+            <th class="num">Menge</th>
+            <th class="num">Einzel Preis</th>
+            <th class="num">Total exkl. MwST</th>
+            <th class="num">MwST Satz</th>
+            <th class="num">MwST CHF</th>
+            <th class="num">Total inkl. MwST</th>
+          </tr>
+        </thead>
+        <tbody data-bind="rows"></tbody>
+      </table>
+
+      <div class="totals">
+        <div class="tot"><b>Total exkl. MwST:</b> CHF <span data-bind="totalNet"></span></div>
+        <div data-bind="vatSummary"></div>
+        <div class="tot"><b>Total MwST:</b> CHF <span data-bind="totalVat"></span></div>
+        <div class="tot"><b>Total inkl. MwST:</b> CHF <span data-bind="totalGross"></span></div>
+      </div>
+
+      <div data-bind="noteBlock"></div>
+
+      <button class="btn" onclick="window.print()">Drucken / PDF Speichern</button>
+    </body>
+    </html>
+  </template>
+
+  <!-- JS: ordine ESATTO -->
+  <script src="js/config.js" defer></script>
+  <script src="../js/pages/prodotti.js" defer></script>
+  <script src="js/ui.js" defer></script>
+  <script src="js/api.js" defer></script>
+  <script src="js/invoice.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

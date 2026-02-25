@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./assets/logo/favicon.ico" type="image/x-icon">
+    <title>Contattami</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <h1 data-i18n="contact_title">Contattami</h1>
+        <select id="language-switcher" class="lang-switcher">
+            <option value="it">IT</option>
+            <option value="en">EN</option>
+            <option value="de">DE</option>
+        </select>
+    </nav>
+</header>
+
+<main>
+    <section class="contact-section">
+        <p data-i18n="contact_subtitle">
+            In questa pagina potrai mandarmi una mail per poter ordinare delle torte oppure chiedere semplicemente informazioni a riguardo.
+        </p>
+        <br/>
+        <div class="card-contact">
+            <h2 data-i18n="contact_notice">
+                AVVISO IMPORTANTE:
+            </h2>
+            <br/>
+            <p data-i18n="contact_description">
+                Nel caso in cui desideraste effettuare un ordine tramite questa email, vi pregherei di fare attenzione a ricevere sempre una CONFERMA D'ORDINE da parte mia, che che sarà poi seguita da un pagamento anticipato degli articoli scelti. Senza questa procedura il vostro ordine non sarà eseguito. Per eventuali ritardi che vanno oltre le 48 ore, vi preghiamo di contattare telefonicamente il numero: +41 76 680 81 86.
+            </p>
+        </div>
+    </section>
+    <br/>
+    <section class="contact-section">
+        <div class="contact-wrapper">
+            <div class="contact-form">
+                <form id="contattoForm" action="https://formspree.io/f/xdalddrr" method="POST">
+                    <label>
+                        Name:
+                        <input type="text" name="name" placeholder="Name" required>
+                    </label>
+
+                    <label>
+                        Email:
+                        <input type="email" name="email" placeholder="Email" required>
+                    </label>
+
+                    <label>
+                        Message:
+                        <textarea name="message" placeholder="Message" required></textarea>
+                    </label>
+
+                    <button data-i18n="contact_button" type="submit">Invia</button>
+                </form>
+            </div>
+
+            <div class="contact-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5414.070460280085!2d8.340185091473575!3d47.2745658364973!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47900517b9961141%3A0xd21d9dcb3672b39b!2sKlosterfeldstrasse%2026%2C%205630%20Muri!5e0!3m2!1sde!2sch!4v1768666641691!5m2!1sde!2sch" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+    <br/>
+    <div class="return-button">
+            <button><a data-i18n="button_return" href="index.html">Torna alla Home</a></button>
+    </div>
+</main>
+
+<!-- FOOTER -->
+    <footer class="footer">
+        <p><a href="https://www.angelopiccoli.me">&copy; 2026 - Angelo Piccoli</a></p>
+    </footer>
+
+    <script src="js/i18n/i18n-core.js"></script>
+    <script src="js/i18n/translations-contattami.js"></script>
+    <script src="js/pages/contattami.js"></script>
+    <script src="js/i18n/i18n-switcher.js"></script>
+</body>
+</html>

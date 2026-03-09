@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
               de: "Gebackene Mürbeteig-Tarte, gefüllt mit Nutella®"
       },
       image: "assets/products/cards/Crostata-nutella-card.jpg",
-      cost: "38.50",
+      cost: "43.50",
       vat: 0.026
     },
     {
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
               de: "Gebackene Mürbeteig-Tarte, gefüllt mit Kirschkonfitüre"
       },
       image: "assets/products/cards/Crostata-marmellata-card.jpg",
-      cost: "37.50",
+      cost: "42.50",
       vat: 0.026
 
     },
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
               de: "Gebackene Mürbeteig-Tarte, gefüllt mit Pistaziencreme"
       },
       image: "assets/products/cards/Crostata-pistacchio-card.jpg",
-      cost: "42.-",
+      cost: "54.50",
       vat: 0.026
     },
     {
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
               de: "Gebackener Bocconotto aus Mürbeteig, gefüllt mit Konditorcreme"
       },
       image: "assets/products/cards/Bocconotto-crema-card.jpg",
-      cost: "42.-",
+      cost: "44.50",
       vat: 0.026
     },
   ];

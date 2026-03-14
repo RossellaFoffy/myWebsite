@@ -169,9 +169,10 @@ button:hover {
 }
 
 /* HERO */
+
 .hero {
   position: relative;
-  height: 100vh;
+  height: 80vh;
   overflow: hidden;
 }
 

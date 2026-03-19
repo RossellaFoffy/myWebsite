@@ -7,9 +7,9 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       art_number: "0001",
       title: {
-              it: "Crostata alla Nutella®",
-              en: "Nutella® Tart",
-              de: "Nutella®-Mürbeteig-Tarte"
+              it: "Crostata alla Crema di Nocciole",
+              en: "Hazelnut Cream Tart",
+              de: "Haselnusscreme-Mürbeteig-Tarte"
       },
       description: {
               it: "Crostata cotta, fatta di pasta frolla e farcita con Nutella®",
@@ -18,7 +18,12 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       image: "assets/products/cards/Crostata-nutella-card.jpg",
       cost: "43.50",
-      vat: 0.026
+      vat: 0.026,
+      mwst: {
+              it: "escluso IVA",
+              en: "VAT excluded",
+              de: "exklusiv MwST"
+      }
     },
     {
       art_number: "0002",
@@ -34,7 +39,12 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       image: "assets/products/cards/Crostata-marmellata-card.jpg",
       cost: "42.50",
-      vat: 0.026
+      vat: 0.026,
+      mwst: {
+              it: "escluso IVA",
+              en: "VAT excluded",
+              de: "exklusiv MwST"
+      }
 
     },
     {
@@ -51,7 +61,12 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       image: "assets/products/cards/Crostata-pistacchio-card.jpg",
       cost: "54.50",
-      vat: 0.026
+      vat: 0.026,
+      mwst: {
+              it: "escluso IVA",
+              en: "VAT excluded",
+              de: "exklusiv MwST"
+      }
     },
     {
       art_number: "0004",
@@ -67,7 +82,12 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       image: "assets/products/cards/Bocconotto-crema-card.jpg",
       cost: "44.50",
-      vat: 0.026
+      vat: 0.026,
+      mwst: {
+              it: "escluso IVA",
+              en: "VAT excluded",
+              de: "exklusiv MwST"
+      }
     },
   ];
 
@@ -94,6 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <img class="card-image" src="${prod.image}"/>
         <br/>
         <h3 class="card-cost"><b>${prod.cost} chf</b></h3>
+        <p>${prod.mwst[lang]}</p>
       `;
 
       container.appendChild(box);

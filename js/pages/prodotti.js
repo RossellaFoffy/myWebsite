@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
               de: "Gebackene Mürbeteig-Tarte, gefüllt mit Kirschkonfitüre"
       },
       image: "assets/products/cards/Crostata-marmellata-card.jpg",
-      cost: "42.50",
+      cost: "39.50",
       vat: 0.026,
       mwst: {
               it: "escluso IVA",

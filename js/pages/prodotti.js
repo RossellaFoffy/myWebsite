@@ -89,6 +89,27 @@ document.addEventListener("DOMContentLoaded", () => {
               de: "exklusiv MwST"
       }
     },
+    {
+      art_number: "0005",
+      title: {
+              it: "Pasticcini alle Mandorle",
+              en: "Almond Pastries",
+              de: "Mandelgebäck"
+      },
+      description: {
+              it: "Pasticcini con pasta di mandorle cotti in forno guarniti con una mandorla intera",
+              en: "Oven-baked marzipan pastries garnished with a whole Almond",
+              de: "Gebackene Mandelgebäckstücke aus Marzipan, garniert mit einer ganzen Mandel"
+      },
+      image: "assets/products/cards/Pasticcini-Mandorle.jpg",
+      cost: "49.00",
+      vat: 0.026,
+      mwst: {
+              it: "al KG escluso IVA",
+              en: "per KG VAT excluded",
+              de: "pro KG exklusiv MwST"
+      }
+    },
   ];
 
   window.PRODUCTS = products;

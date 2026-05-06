@@ -23,6 +23,16 @@ document.addEventListener("DOMContentLoaded", () => {
               it: "escluso IVA",
               en: "VAT excluded",
               de: "exklusiv MwST"
+      },
+      size: {
+              it: "Dimensione: 30 cm Ø",
+              en: "Size: 30 cm Ø",
+              de: "Grösse: 30 cm Ø"
+      },
+      weight: {
+              it: "Peso netto: 1'528 gr",
+              en: "Net weight: 1'528 gr",
+              de: "Nettogewicht: 1'528 gr"
       }
     },
     {
@@ -44,6 +54,16 @@ document.addEventListener("DOMContentLoaded", () => {
               it: "escluso IVA",
               en: "VAT excluded",
               de: "exklusiv MwST"
+      },
+      size: {
+              it: "Dimensione: 30 cm Ø",
+              en: "Size: 30 cm Ø",
+              de: "Grösse: 30 cm Ø"
+      },
+      weight: {
+              it: "Peso netto: 1'616 gr",
+              en: "Net weight: 1'616 gr",
+              de: "Nettogewicht: 1'616 gr"
       }
 
     },
@@ -66,6 +86,16 @@ document.addEventListener("DOMContentLoaded", () => {
               it: "escluso IVA",
               en: "VAT excluded",
               de: "exklusiv MwST"
+      },
+      size: {
+              it: "Dimensione: 30 cm Ø",
+              en: "Size: 30 cm Ø",
+              de: "Grösse: 30 cm Ø"
+      },
+      weight: {
+              it: "Peso netto: 1'514 gr",
+              en: "Net weight: 1'514 gr",
+              de: "Nettogewicht: 1'514 gr"
       }
     },
     {
@@ -87,6 +117,16 @@ document.addEventListener("DOMContentLoaded", () => {
               it: "escluso IVA",
               en: "VAT excluded",
               de: "exklusiv MwST"
+      },
+      size: {
+              it: "Dimensione: 30 cm Ø",
+              en: "Size: 30 cm Ø",
+              de: "Grösse: 30 cm Ø"
+      },
+      weight: {
+              it: "Peso netto: 2'120 gr",
+              en: "Net weight: 2'120 gr",
+              de: "Nettogewicht: 2'120 gr"
       }
     },
     {
@@ -97,9 +137,9 @@ document.addEventListener("DOMContentLoaded", () => {
               de: "Mandelgebäck"
       },
       description: {
-              it: "Pasticcini con pasta di mandorle cotti in forno guarniti con una mandorla intera",
-              en: "Oven-baked marzipan pastries garnished with a whole Almond",
-              de: "Gebackene Mandelgebäckstücke aus Marzipan, garniert mit einer ganzen Mandel"
+              it: "Pasticcini con pasta di mandorle cotti in forno guarniti con una mandorla intera o con delle ciliegie candite. In 1 Kg ce ne sono circa 30 pz.",
+              en: "Oven-baked marzipan pastries garnished with a whole Almond or with candied cherries. There are about 30 pieces in 1 Kg.",
+              de: "Gebackene Mandelgebäckstücke aus Marzipan, mit einer ganzen Mandel oder kandierten Kirschen garniert. In 1 Kg sing etwa 30 Stück enthalten."
       },
       image: "assets/products/cards/Pasticcini-Mandorle.jpg",
       cost: "49.00",
@@ -108,7 +148,50 @@ document.addEventListener("DOMContentLoaded", () => {
               it: "al KG escluso IVA",
               en: "per KG VAT excluded",
               de: "pro KG exklusiv MwST"
+      },
+      size: {
+              it: "Dimensione: 5 cm Ø",
+              en: "Size: 5 cm Ø",
+              de: "Grösse: 5 cm Ø"
+      },
+      weight: {
+              it: "Peso netto: 33 gr/pezzo",
+              en: "Net weight: 33 gr/each",
+              de: "Nettogewicht: 33 gr/Stück"
+      },
+      
+    },
+    {
+      art_number: "0006",
+      title: {
+              it: "Crostata alla Marmellata di Albicocche",
+              en: "Apricot-Jam Tart",
+              de: "Aprikosekonfitüre-Mürbeteig-Tarte"
+      },
+      description: {
+              it: "Crostata cotta, fatta di pasta frolla e farcita con Marmellata di Albicocche",
+              en: "Baked shortcrust tart, filled with Apricot-Jam",
+              de: "Gebackene Mürbeteig-Tarte, gefüllt mit Aprikosekonfitüre"
+      },
+      image: "assets/products/cards/Crostata-albicocca-card.jpg",
+      cost: "39.50",
+      vat: 0.026,
+      mwst: {
+              it: "escluso IVA",
+              en: "VAT excluded",
+              de: "exklusiv MwST"
+      },
+      size: {
+              it: "Dimensione: 30 cm Ø",
+              en: "Size: 30 cm Ø",
+              de: "Grösse: 30 cm Ø"
+      },
+      weight: {
+              it: "Peso netto: 1'616 gr",
+              en: "Net weight: 1'616 gr",
+              de: "Nettogewicht: 1'616 gr"
       }
+
     },
   ];
 
@@ -136,6 +219,9 @@ document.addEventListener("DOMContentLoaded", () => {
         <br/>
         <h3 class="card-cost"><b>${prod.cost} chf</b></h3>
         <p>${prod.mwst[lang]}</p>
+        <br/>
+        <p><b>${prod.size[lang]}</b></p>
+        <p><b>${prod.weight[lang]}</b></p>
       `;
 
       container.appendChild(box);
